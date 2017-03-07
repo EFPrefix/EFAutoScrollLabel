@@ -1,11 +1,14 @@
 use_frameworks!
 
 target 'EFAutoScrollLabel_Example' do
-  pod 'EFAutoScrollLabel', :path => '../'
 
-  target 'EFAutoScrollLabel_Tests' do
-    inherit! :search_paths
+    pod 'SnapKit', '~> 3.0.1'                   # AutoLayout
 
-    
-  end
+    pod 'EFAutoScrollLabel', :path => '../'
+
+    target 'EFAutoScrollLabel_Tests' do
+        inherit! :search_paths
+
+        
+    end
 end

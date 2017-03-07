@@ -1,6 +1,6 @@
 {
   "name": "EFAutoScrollLabel",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A short description of EFAutoScrollLabel.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/EyreFree/EFAutoScrollLabel",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/EyreFree/EFAutoScrollLabel.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"

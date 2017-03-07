@@ -1,16 +1,19 @@
 PODS:
-  - EFAutoScrollLabel (0.1.0)
+  - EFAutoScrollLabel (1.0.0)
+  - SnapKit (3.0.2)
 
 DEPENDENCIES:
   - EFAutoScrollLabel (from `../`)
+  - SnapKit (~> 3.0.1)
 
 EXTERNAL SOURCES:
   EFAutoScrollLabel:
     :path: ../
 
 SPEC CHECKSUMS:
-  EFAutoScrollLabel: 63fb7a6c70db256279ecfbbe67396c49afe4d29b
+  EFAutoScrollLabel: 338939c8d3a357bdbcb36178a9426109c3f4b50c
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: dbfe613e12134c479cb39470e55d7afca8e6fb7f
+PODFILE CHECKSUM: f078fabb5bd11ead8ebcbd5041d72fe17c2b4117
 
 COCOAPODS: 1.2.0.beta.3

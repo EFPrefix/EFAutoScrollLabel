@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'EFAutoScrollLabel'
   s.version          = '1.0.0'
-  s.summary          = 'A short description of EFAutoScrollLabel.'
+  s.summary          = 'A label which can scroll when text length beyond the width of label.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A label which can scroll when text length beyond the width of label, in Swift.
                        DESC
 
   s.homepage         = 'https://github.com/EyreFree/EFAutoScrollLabel'
@@ -30,13 +30,13 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'EFAutoScrollLabel/Classes/**/*'
+  s.source_files = 'EFAutoScrollLabel/Classes/*.swift'
   
   # s.resource_bundles = {
   #   'EFAutoScrollLabel' => ['EFAutoScrollLabel/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'Foundation', 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

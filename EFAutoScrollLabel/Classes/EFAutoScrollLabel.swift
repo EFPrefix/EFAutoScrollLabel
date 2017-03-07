@@ -10,46 +10,45 @@ import UIKit
 
 let kLabelCount = 2
 let kDefaultFadeLength = CGFloat(7.0)
-// Pixel buffer space between scrolling label
-let kDefaultLabelBufferSpace = CGFloat(20)
+let kDefaultLabelBufferSpace = CGFloat(20)  // Pixel buffer space between scrolling label
 let kDefaultPixelsPerSecond = 30.0
 let kDefaultPauseTime = 1.5
 
-enum AutoScrollDirection {
+public enum AutoScrollDirection {
     case Right
     case Left
 }
 
-class EFAutoScrollLabel: UIView {
+public class EFAutoScrollLabel: UIView {
 
-    var scrollDirection = AutoScrollDirection.Right {
+    public var scrollDirection = AutoScrollDirection.Right {
         didSet {
             scrollLabelIfNeeded()
         }
     }
 
     // Pixels per second, defaults to 30
-    var scrollSpeed = 30.0 {
+    public var scrollSpeed = 30.0 {
         didSet {
             scrollLabelIfNeeded()
         }
     }
 
     // Defaults to 1.5
-    var pauseInterval = 1.5
+    public var pauseInterval = 1.5
 
     // Pixels, defaults to 20
-    var labelSpacing = CGFloat(20)
+    public var labelSpacing = CGFloat(20)
 
-    var animationOptions: UIViewAnimationOptions!
+    public var animationOptions: UIViewAnimationOptions!
 
     /**
      * Returns YES, if it is actively scrolling, NO if it has paused or if text is within bounds (disables scrolling).
      */
-    var scrolling = false
+    public var scrolling = false
 
     // Defaults to 7
-    var fadeLength = CGFloat(7) {
+    public var fadeLength = CGFloat(7) {
         didSet {
             if oldValue != fadeLength {
                 refreshLabels()
@@ -59,7 +58,7 @@ class EFAutoScrollLabel: UIView {
     }
 
     // UILabel properties
-    var text: String? {
+    public var text: String? {
         get {
             return mainLabel.text
         }
@@ -68,7 +67,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    func setText(text: String?, refresh: Bool) {
+    public func setText(text: String?, refresh: Bool) {
         // Ignore identical text changes
 
         if text == self.text {
@@ -84,7 +83,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    var attributedText: NSAttributedString? {
+    public var attributedText: NSAttributedString? {
         get {
             return mainLabel.attributedText
         }
@@ -93,7 +92,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    func setAttributedText(text: NSAttributedString?, refresh: Bool) {
+    public func setAttributedText(text: NSAttributedString?, refresh: Bool) {
         if text == self.attributedText {
             return
         }
@@ -107,7 +106,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    var textColor: UIColor! {
+    public var textColor: UIColor! {
         get {
             return self.mainLabel.textColor
         }
@@ -118,7 +117,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    var font: UIFont! {
+    public var font: UIFont! {
         get {
             return mainLabel.font
         }
@@ -131,7 +130,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    var shadowColor: UIColor? {
+    public var shadowColor: UIColor? {
         get {
             return self.mainLabel.shadowColor
         }
@@ -142,7 +141,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    var shadowOffset: CGSize {
+    public var shadowOffset: CGSize {
         get {
             return self.mainLabel.shadowOffset
         }
@@ -153,18 +152,18 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    override var intrinsicContentSize: CGSize {
+    public override var intrinsicContentSize: CGSize {
         get {
             return CGSize(width: 0.0, height: self.mainLabel.intrinsicContentSize.height)
         }
     }
 
     // Only applies when not auto-scrolling
-    var textAlignment: NSTextAlignment!
+    public var textAlignment: NSTextAlignment!
 
     // Views
-    var labels = [UILabel]()
-    var mainLabel: UILabel! {
+    private var labels = [UILabel]()
+    private var mainLabel: UILabel! {
         if labels.count > 0 {
             return labels[0]
         }
@@ -172,7 +171,7 @@ class EFAutoScrollLabel: UIView {
     }
 
     private var sv: UIScrollView!
-    var scrollView: UIScrollView! {
+    public var scrollView: UIScrollView! {
         get {
             if sv == nil {
                 sv = UIScrollView(frame: self.bounds)
@@ -184,17 +183,17 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
 
-    func commonInit() {
+    private func commonInit() {
 
         addSubview(scrollView)
 
@@ -225,7 +224,7 @@ class EFAutoScrollLabel: UIView {
         self.fadeLength = kDefaultFadeLength
     }
 
-    override var frame: CGRect {
+    public override var frame: CGRect {
         get {
             return super.frame
         }
@@ -235,7 +234,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    override var bounds: CGRect {
+    public override var bounds: CGRect {
         get {
             return super.bounds
         }
@@ -245,12 +244,12 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    func didChangeFrame() {
+    private func didChangeFrame() {
         refreshLabels()
         applyGradientMaskForFadeLength(fadeLengthIn: self.fadeLength, enableFade: self.scrolling)
     }
 
-    func observeApplicationNotifications() {
+    public func observeApplicationNotifications() {
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
             self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
@@ -262,12 +261,12 @@ class EFAutoScrollLabel: UIView {
         )
     }
 
-    func enableShadow() {
+    @objc private func enableShadow() {
         scrolling = true
         self.applyGradientMaskForFadeLength(fadeLengthIn: self.fadeLength, enableFade: true)
     }
 
-    func scrollLabelIfNeeded() {
+    public func scrollLabelIfNeeded() {
         if text == nil || text!.characters.count == 0 {
             return
         }
@@ -315,7 +314,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
 
-    func refreshLabels() {
+    @objc private func refreshLabels() {
         var offset = CGFloat(0)
 
         if mainLabel == nil {
@@ -369,7 +368,7 @@ class EFAutoScrollLabel: UIView {
 
     }
 
-    func applyGradientMaskForFadeLength(fadeLengthIn: CGFloat, enableFade fade: Bool) {
+    private func applyGradientMaskForFadeLength(fadeLengthIn: CGFloat, enableFade fade: Bool) {
         var fadeLength = fadeLengthIn
 
         if mainLabel == nil {
@@ -430,7 +429,7 @@ class EFAutoScrollLabel: UIView {
         }
     }
     
-    func onUIApplicationDidChangeStatusBarOrientationNotification(notification: NSNotification) {
+    private func onUIApplicationDidChangeStatusBarOrientationNotification(notification: NSNotification) {
         // Delay to have it re-calculate on next runloop
         perform(#selector(EFAutoScrollLabel.refreshLabels), with: nil, afterDelay: 0.1)
         perform(#selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil, afterDelay: 0.1)
