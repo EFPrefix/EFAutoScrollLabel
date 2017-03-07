@@ -11,7 +11,7 @@
 		345C5C498692BDD683B88D0838D699CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		4A33BA31DEF24045A05F611486DA523B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		4E09E0BC31F5C1109D1378F6B0337F3F /* Pods-EFAutoScrollLabel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C56B04435FB58064DC4F29244E499E5C /* Pods-EFAutoScrollLabel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57456A49D151A0DF99D64B7D5E94B43C /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97689E6E553B6C699630521C4476FD27 /* ReplaceMe.swift */; };
+		57456A49D151A0DF99D64B7D5E94B43C /* EFAutoScrollLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97689E6E553B6C699630521C4476FD27 /* EFAutoScrollLabel.swift */; };
 		8D65889B5BDA2EC418929D105BC8942C /* EFAutoScrollLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C6C8ED0E2FDE462A4D2E0F813D82AD /* EFAutoScrollLabel-dummy.m */; };
 		9ABF6FC939FD28CA9D558153D8FFBEB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		C6194D37943C34D4A154C4D1921149F8 /* Pods-EFAutoScrollLabel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5706B5C8E87BF4B519BA640C8629A2B /* Pods-EFAutoScrollLabel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,23 +33,23 @@
 		03112A029DD897431691F49915D093C4 /* EFAutoScrollLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFAutoScrollLabel-prefix.pch"; sourceTree = "<group>"; };
 		0CC2DB19D8B653CDC43AFCF9427F2CD3 /* Pods-EFAutoScrollLabel_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EFAutoScrollLabel_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0F5A06D2A8ABF076B6386AE92F7ADFE5 /* Pods-EFAutoScrollLabel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EFAutoScrollLabel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2984AAD293B7E440B402A26015FD29ED /* EFAutoScrollLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EFAutoScrollLabel.modulemap; sourceTree = "<group>"; };
+		2984AAD293B7E440B402A26015FD29ED /* EFAutoScrollLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EFAutoScrollLabel.modulemap; sourceTree = "<group>"; };
 		35C561470E8C17EA05AA7EB12669EBBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		418D3FF6B258BED381FC6E59966DED95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4369FD0EF5CC2E93B7D0597EC2754364 /* Pods-EFAutoScrollLabel_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EFAutoScrollLabel_Tests.modulemap"; sourceTree = "<group>"; };
+		4369FD0EF5CC2E93B7D0597EC2754364 /* Pods-EFAutoScrollLabel_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EFAutoScrollLabel_Tests.modulemap"; sourceTree = "<group>"; };
 		4858F0ED72EF3D3086E39D3D5BD60B03 /* Pods-EFAutoScrollLabel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EFAutoScrollLabel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5613B3069CDFBAEC4FCDA7812E504F49 /* Pods-EFAutoScrollLabel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EFAutoScrollLabel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		56C6C8ED0E2FDE462A4D2E0F813D82AD /* EFAutoScrollLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EFAutoScrollLabel-dummy.m"; sourceTree = "<group>"; };
 		7B24ACC50933454C60E558EC9B819D81 /* EFAutoScrollLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EFAutoScrollLabel.xcconfig; sourceTree = "<group>"; };
-		7B898A2EED2387937152779F114A82DC /* Pods_EFAutoScrollLabel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EFAutoScrollLabel_Example.framework; path = "Pods-EFAutoScrollLabel_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B898A2EED2387937152779F114A82DC /* Pods_EFAutoScrollLabel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EFAutoScrollLabel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		869660C7295FE0CC72FB051D016A2AC4 /* Pods-EFAutoScrollLabel_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EFAutoScrollLabel_Tests-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97689E6E553B6C699630521C4476FD27 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97689E6E553B6C699630521C4476FD27 /* EFAutoScrollLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EFAutoScrollLabel.swift; sourceTree = "<group>"; };
 		9D3BE207C14327838632451022F95EE8 /* Pods-EFAutoScrollLabel_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EFAutoScrollLabel_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A421FD2CD457B41BA52C339F86CA2D13 /* Pods-EFAutoScrollLabel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EFAutoScrollLabel_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AD9F095336D4FBD032C45BEF00A57DCD /* Pods-EFAutoScrollLabel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EFAutoScrollLabel_Example.modulemap"; sourceTree = "<group>"; };
+		AD9F095336D4FBD032C45BEF00A57DCD /* Pods-EFAutoScrollLabel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EFAutoScrollLabel_Example.modulemap"; sourceTree = "<group>"; };
 		B33DBED540FB9362848F745A4A737359 /* EFAutoScrollLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFAutoScrollLabel-umbrella.h"; sourceTree = "<group>"; };
-		B61E1CDB7A1EE948208BB394A6BFF4B0 /* Pods_EFAutoScrollLabel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EFAutoScrollLabel_Tests.framework; path = "Pods-EFAutoScrollLabel_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61E1CDB7A1EE948208BB394A6BFF4B0 /* Pods_EFAutoScrollLabel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EFAutoScrollLabel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B906BD67359BB0B6FEA26C9DCF01C047 /* Pods-EFAutoScrollLabel_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EFAutoScrollLabel_Example-dummy.m"; sourceTree = "<group>"; };
 		C2211F88D0A3E481A1D14E139EC80287 /* Pods-EFAutoScrollLabel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EFAutoScrollLabel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		C56B04435FB58064DC4F29244E499E5C /* Pods-EFAutoScrollLabel_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EFAutoScrollLabel_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		DA1AF6ECCC8817B309D4D51F110E605C /* Pods-EFAutoScrollLabel_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EFAutoScrollLabel_Example-frameworks.sh"; sourceTree = "<group>"; };
 		EAE4767154873C89986BC1003B4003B6 /* Pods-EFAutoScrollLabel_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EFAutoScrollLabel_Example-resources.sh"; sourceTree = "<group>"; };
 		F5706B5C8E87BF4B519BA640C8629A2B /* Pods-EFAutoScrollLabel_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EFAutoScrollLabel_Example-umbrella.h"; sourceTree = "<group>"; };
-		F830215CE0267E9BE1AA450B67DF77E4 /* EFAutoScrollLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EFAutoScrollLabel.framework; path = EFAutoScrollLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F830215CE0267E9BE1AA450B67DF77E4 /* EFAutoScrollLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EFAutoScrollLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0FAAAC2332BA8F4470A0CA531C92FC /* Pods-EFAutoScrollLabel_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EFAutoScrollLabel_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +115,6 @@
 			children = (
 				7555B3890998DB1413261D314A21CE3B /* Classes */,
 			);
-			name = EFAutoScrollLabel;
 			path = EFAutoScrollLabel;
 			sourceTree = "<group>";
 		};
@@ -140,9 +139,8 @@
 		7555B3890998DB1413261D314A21CE3B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				97689E6E553B6C699630521C4476FD27 /* ReplaceMe.swift */,
+				97689E6E553B6C699630521C4476FD27 /* EFAutoScrollLabel.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -356,7 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D65889B5BDA2EC418929D105BC8942C /* EFAutoScrollLabel-dummy.m in Sources */,
-				57456A49D151A0DF99D64B7D5E94B43C /* ReplaceMe.swift in Sources */,
+				57456A49D151A0DF99D64B7D5E94B43C /* EFAutoScrollLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
