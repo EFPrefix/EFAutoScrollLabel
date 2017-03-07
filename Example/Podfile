@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EFAutoScrollLabel_Example' do
+  pod 'EFAutoScrollLabel', :path => '../'
+
+  target 'EFAutoScrollLabel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
