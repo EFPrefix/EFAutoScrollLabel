@@ -1,0 +1,16 @@
+PODS:
+  - EFAutoScrollLabel (0.1.0)
+
+DEPENDENCIES:
+  - EFAutoScrollLabel (from `../`)
+
+EXTERNAL SOURCES:
+  EFAutoScrollLabel:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EFAutoScrollLabel: 63fb7a6c70db256279ecfbbe67396c49afe4d29b
+
+PODFILE CHECKSUM: dbfe613e12134c479cb39470e55d7afca8e6fb7f
+
+COCOAPODS: 1.2.0.beta.3
