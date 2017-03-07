@@ -8,6 +8,8 @@
 
 A label which can scroll when text length beyond the width of label, in Swift.
 
+> [中文介绍](https://github.com/EyreFree/EFAutoScrollLabel/blob/master/README_CN.md)
+
 ## Overview
 
 <img src="EFAutoScrollLabel/Assets/example.png" width = "50%"/>
