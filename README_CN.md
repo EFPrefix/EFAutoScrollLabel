@@ -36,7 +36,7 @@ git clone git@github.com:EyreFree/EFAutoScrollLabel.git; cd EFAutoScrollLabel/Ex
 EFAutoScrollLabel 可以通过 [CocoaPods](http://cocoapods.org) 进行获取。只需要在你的 Podfile 中添加如下代码就能实现引入：
 
 ```
-pod "EFAutoScrollLabel", '~> 1.1.0'
+pod "EFAutoScrollLabel", '~> 1.0.0'
 ```
 
 ## 使用
