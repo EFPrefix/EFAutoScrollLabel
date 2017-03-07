@@ -12,7 +12,7 @@ UILabel 跑马灯效果, Swift 版.
 
 ## 概述
 
-<img src="EFAutoScrollLabel/Assets/example.png" width = "50%"/>
+<img src="EFAutoScrollLabel/Assets/example.gif" width = "62.5%"/>
 
 ## 示例
 
