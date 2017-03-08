@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
 [![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)](https://travis-ci.org/EyreFree/EFAutoScrollLabel)
 
-UILabel 跑马灯效果, Swift 版.
+UILabel 跑马灯效果, Swift 版。
 
 > [English Introduction](https://github.com/EyreFree/EFAutoScrollLabel/blob/master/README.md)
 
