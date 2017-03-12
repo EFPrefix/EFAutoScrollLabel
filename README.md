@@ -43,7 +43,7 @@ self.view.addSubview(myLabel)
 
 ## Use
 
-#### 1. Import EFQRCode module where you want to use it:
+#### 1. Import EFAutoScrollLabel module where you want to use it:
 
 ```swift
 import EFAutoScrollLabel
