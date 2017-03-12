@@ -49,7 +49,7 @@ self.view.addSubview(myLabel)
 import EFAutoScrollLabel
 ```
 
-#### 2. Simply initialize a `EFAutoScrollLabel` and set some parameter:
+#### 2. Initialize a `EFAutoScrollLabel` and set some parameter:
 
 ```swift
 let myLabel = EFAutoScrollLabel(frame: CGRect(x: 10, y: 10, width: 200, height: 40))
