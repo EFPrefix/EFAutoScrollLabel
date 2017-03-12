@@ -41,6 +41,33 @@ let myLabel = EFAutoScrollLabel(frame: CGRect(x: 10, y: 10, width: 200, height: 
 self.view.addSubview(myLabel)
 ```
 
+## Use
+
+#### 1. Import EFQRCode module where you want to use it:
+
+```swift
+import EFAutoScrollLabel
+```
+
+#### 2. Simply initialize a `EFAutoScrollLabel` and set some parameter:
+
+```swift
+let myLabel = EFAutoScrollLabel(frame: CGRect(x: 10, y: 10, width: 200, height: 40))
+myLabel.backgroundColor = UIColor(red: 253.0 / 255.0, green: 255.0 / 255.0, blue: 234.0 / 255.0, alpha: 1)
+myLabel.textColor = UIColor(red: 249.0 / 255.0, green: 94.0 / 255.0, blue: 22.0 / 255.0, alpha: 1)
+myLabel.font = UIFont.systemFont(ofSize: 13)
+myLabel.labelSpacing = 30                       // Distance between start and end labels
+myLabel.pauseInterval = 1.7                     // Seconds of pause before scrolling starts again
+myLabel.scrollSpeed = 30                        // Pixels per second
+myLabel.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
+myLabel.fadeLength = 12                         // Length of the left and right edge fade, 0 to disable
+myLabel.scrollDirection = AutoScrollDirection.Left
+myLabel.observeApplicationNotifications()
+self.view.addSubview(myLabel)
+```
+
+#### 3. `AutoLayout` is also supported.
+
 ## PS
 
 The first version of [EFAutoScrollLabel](https://github.com/EyreFree/EFAutoScrollLabel) is converted from [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41).
