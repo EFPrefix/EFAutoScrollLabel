@@ -96,11 +96,9 @@ public class EFAutoScrollLabel: UIView {
         if text == self.attributedText {
             return
         }
-
         for l in labels {
             l.attributedText = text
         }
-
         if refresh {
             refreshLabels()
         }

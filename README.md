@@ -29,7 +29,7 @@ EFAutoScrollLabel is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "EFAutoScrollLabel", '~> 1.0.0'
+pod "EFAutoScrollLabel", '~> 1.0.1'
 ```
 
 ## Setup

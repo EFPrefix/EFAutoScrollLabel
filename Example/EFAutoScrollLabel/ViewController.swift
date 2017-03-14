@@ -40,11 +40,11 @@ class ViewController: UIViewController {
         scrollView0.backgroundColor = UIColor(red: 253.0 / 255.0, green: 255.0 / 255.0, blue: 234.0 / 255.0, alpha: 1)
         scrollView0.textColor = UIColor(red: 249.0 / 255.0, green: 94.0 / 255.0, blue: 22.0 / 255.0, alpha: 1)
         scrollView0.font = UIFont.systemFont(ofSize: 13)
-        scrollView0.labelSpacing = 30                      // distance between start and end labels
-        scrollView0.pauseInterval = 1.7                    // seconds of pause before scrolling starts again
-        scrollView0.scrollSpeed = 30                       // pixels per second
-        scrollView0.textAlignment = NSTextAlignment.left   // centers text when no auto-scrolling is applied
-        scrollView0.fadeLength = 12
+        scrollView0.labelSpacing = 30                       // Distance between start and end labels
+        scrollView0.pauseInterval = 1.7                     // Seconds of pause before scrolling starts again
+        scrollView0.scrollSpeed = 30                        // Pixels per second
+        scrollView0.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
+        scrollView0.fadeLength = 12                         // Length of the left and right edge fade, 0 to disable
         scrollView0.scrollDirection = AutoScrollDirection.Left
         scrollView0.observeApplicationNotifications()
         scrollView0.isUserInteractionEnabled = false
