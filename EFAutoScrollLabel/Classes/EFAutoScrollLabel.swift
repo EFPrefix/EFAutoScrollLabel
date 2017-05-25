@@ -265,7 +265,7 @@ public class EFAutoScrollLabel: UIView {
     }
 
     public func scrollLabelIfNeeded() {
-        if text == nil || text!.characters.count == 0 {
+        if text == nil || text?.characters.count == 0 {
             return
         }
 
