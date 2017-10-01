@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'EFAutoScrollLabel_Example' do
 
-    pod 'SnapKit', '~> 3.0.1'                   # AutoLayout
+    pod 'SnapKit', '~> 4.0.0'                   # AutoLayout
 
     pod 'EFAutoScrollLabel', :path => '../'
 

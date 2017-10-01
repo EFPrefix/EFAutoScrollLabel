@@ -99,7 +99,8 @@ class ViewController: UIViewController {
         }
 
         // Long_3
-        scrollView3.text = "当一个已经入门的开发者，想要成为一个更好的 iOS 开发者的时候，就会发现互联网的资料太琐碎，而且资料的好坏也难辨。常常都会困惑我要如何提高自己，哪里有好的学习资料。"
+        scrollView3.text = "当一个已经入门的开发者，想要成为一个更好的 iOS 开发者的时候，就会发现互联网的资料太琐碎，而且资料的好坏也难辨"
+            + "。常常都会困惑我要如何提高自己，哪里有好的学习资料。"
         scrollView3.backgroundColor = UIColor(red: 114.0 / 255.0, green: 114.0 / 255.0, blue: 114.0 / 255.0, alpha: 1)
         scrollView3.textColor = UIColor.white
         scrollView3.font = UIFont.systemFont(ofSize: 18)

@@ -42,9 +42,7 @@ public class EFAutoScrollLabel: UIView {
 
     public var animationOptions: UIViewAnimationOptions!
 
-    /**
-     * Returns YES, if it is actively scrolling, NO if it has paused or if text is within bounds (disables scrolling).
-     */
+    // Returns YES, if it is actively scrolling, NO if it has paused or if text is within bounds (disables scrolling).
     public var scrolling = false
 
     // Defaults to 7
@@ -69,7 +67,6 @@ public class EFAutoScrollLabel: UIView {
 
     public func setText(text: String?, refresh: Bool) {
         // Ignore identical text changes
-
         if text == self.text {
             return
         }
@@ -264,7 +261,7 @@ public class EFAutoScrollLabel: UIView {
         self.applyGradientMaskForFadeLength(fadeLengthIn: self.fadeLength, enableFade: true)
     }
 
-    public func scrollLabelIfNeeded() {
+    @objc public func scrollLabelIfNeeded() {
         if text == nil || text?.characters.count == 0 {
             return
         }
@@ -297,7 +294,9 @@ public class EFAutoScrollLabel: UIView {
             options: [self.animationOptions, UIViewAnimationOptions.allowUserInteraction],
             animations: { () -> Void in
                 // Adjust offset
-                self.scrollView.contentOffset = doScrollLeft ? CGPoint(x: labelWidth + self.labelSpacing, y: 0) : CGPoint.zero
+                self.scrollView.contentOffset = doScrollLeft
+                    ? CGPoint(x: labelWidth + self.labelSpacing, y: 0)
+                    : CGPoint.zero
         }) {
             finished in
             self.scrolling = false
