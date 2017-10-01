@@ -1,10 +1,15 @@
-# EFAutoScrollLabel
+![](https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/assets/EFAutoScrollLabel.png)
 
-[![CI Status](http://img.shields.io/travis/EyreFree/EFAutoScrollLabel.svg?style=flat)](https://travis-ci.org/EyreFree/EFAutoScrollLabel)
-[![Version](https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
-[![License](https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
-[![Platform](https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
-[![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)](https://travis-ci.org/EyreFree/EFAutoScrollLabel)
+<p align="center">
+<a href="https://travis-ci.org/EyreFree/EFAutoScrollLabel"><img src="http://img.shields.io/travis/EyreFree/EFAutoScrollLabel.svg"></a>
+<a href="http://cocoapods.org/pods/EFAutoScrollLabel"><img src="https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat"></a>
+<a href="http://cocoapods.org/pods/EFAutoScrollLabel"><img src="https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat"></a>
+<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-swift-orange.svg"></a>
+<a href="https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat"></a>
+<a href="https://twitter.com/EyreFree777"><img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat"></a>
+<a href="http://weibo.com/eyrefree777"><img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat"></a>
+<img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
+</p>
 
 A label which can scroll when text length beyond the width of label, in Swift.
 
@@ -12,7 +17,7 @@ A label which can scroll when text length beyond the width of label, in Swift.
 
 ## Overview
 
-<img src="EFAutoScrollLabel/Assets/example.gif" width = "62.5%"/>
+<img src="https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/assets/example.gif" width = "62.5%"/>
 
 ## Example
 
@@ -20,8 +25,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- XCode 8.0+
-- Swift 3.0+
+| Version | Needs                                |
+|:--------|:-------------------------------------|
+| 1.x     | XCode 8.0+<br>Swift 3.0+<br>iOS 8.0+ |
+| 4.x     | XCode 9.0+<br>Swift 4.0+<br>iOS 8.0+ |
 
 ## Installation
 
@@ -29,7 +36,7 @@ EFAutoScrollLabel is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "EFAutoScrollLabel", '~> 1.0.2'
+pod "EFAutoScrollLabel"
 ```
 
 ## Setup
@@ -77,5 +84,7 @@ The first version of [EFAutoScrollLabel](https://github.com/EyreFree/EFAutoScrol
 EyreFree, eyrefree@eyrefree.org
 
 ## License
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png)
 
 EFAutoScrollLabel is available under the MIT license. See the LICENSE file for more info.

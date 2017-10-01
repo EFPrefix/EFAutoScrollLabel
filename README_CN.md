@@ -1,10 +1,15 @@
-# EFAutoScrollLabel
+![](https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/assets/EFAutoScrollLabel.png)
 
-[![CI Status](http://img.shields.io/travis/EyreFree/EFAutoScrollLabel.svg?style=flat)](https://travis-ci.org/EyreFree/EFAutoScrollLabel)
-[![Version](https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
-[![License](https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
-[![Platform](https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat)](http://cocoapods.org/pods/EFAutoScrollLabel)
-[![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)](https://travis-ci.org/EyreFree/EFAutoScrollLabel)
+<p align="center">
+<a href="https://travis-ci.org/EyreFree/EFAutoScrollLabel"><img src="http://img.shields.io/travis/EyreFree/EFAutoScrollLabel.svg"></a>
+<a href="http://cocoapods.org/pods/EFAutoScrollLabel"><img src="https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat"></a>
+<a href="http://cocoapods.org/pods/EFAutoScrollLabel"><img src="https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat"></a>
+<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-swift-orange.svg"></a>
+<a href="https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat"></a>
+<a href="https://twitter.com/EyreFree777"><img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat"></a>
+<a href="http://weibo.com/eyrefree777"><img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat"></a>
+<img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
+</p>
 
 UILabel 跑马灯效果, Swift 版。
 
@@ -12,7 +17,7 @@ UILabel 跑马灯效果, Swift 版。
 
 ## 概述
 
-<img src="EFAutoScrollLabel/Assets/example.gif" width = "62.5%"/>
+<img src="https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/assets/example.gif" width = "62.5%"/>
 
 ## 示例
 
@@ -28,15 +33,17 @@ git clone git@github.com:EyreFree/EFAutoScrollLabel.git; cd EFAutoScrollLabel/Ex
 
 ## 环境
 
-- XCode 8.0+
-- Swift 3.0+
+| 版本     | 需求                                 |
+|:--------|:-------------------------------------|
+| 1.x     | XCode 8.0+<br>Swift 3.0+<br>iOS 8.0+ |
+| 4.x     | XCode 9.0+<br>Swift 4.0+<br>iOS 8.0+ |
 
 ## 导入
 
 EFAutoScrollLabel 可以通过 [CocoaPods](http://cocoapods.org) 进行获取。只需要在你的 Podfile 中添加如下代码就能实现引入：
 
 ```
-pod "EFAutoScrollLabel", '~> 1.0.0'
+pod "EFAutoScrollLabel"
 ```
 
 ## 建立
@@ -84,5 +91,7 @@ self.view.addSubview(myLabel)
 EyreFree, eyrefree@eyrefree.org
 
 ## 协议
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png)
 
 EFAutoScrollLabel 基于 MIT 协议进行分发和使用，更多信息参见协议文件。
