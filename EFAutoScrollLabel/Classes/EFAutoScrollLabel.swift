@@ -1,52 +1,70 @@
 //
 //  EFAutoScrollLabel.swift
-//  LPDBusiness
+//  EFAutoScrollLabel
 //
-//  Created by EyreFree on 17/3/6.
-//  Copyright © 2017年 LPD. All rights reserved.
+//  Created by EyreFree on 2017/3/6.
 //
+//  Copyright (c) 2017 EyreFree <eyrefree@eyrefree.org>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
-let kLabelCount = 2
-let kDefaultFadeLength = CGFloat(7.0)
-let kDefaultLabelBufferSpace = CGFloat(20)  // Pixel buffer space between scrolling label
-let kDefaultPixelsPerSecond = 30.0
-let kDefaultPauseTime = 1.5
-
-public enum AutoScrollDirection {
+public enum EFAutoScrollDirection {
     case Right
     case Left
 }
 
 public class EFAutoScrollLabel: UIView {
 
-    public var scrollDirection = AutoScrollDirection.Right {
+    private static let kLabelCount = 2
+    private static let kDefaultFadeLength = CGFloat(7.0)
+    private static let kDefaultLabelBufferSpace = CGFloat(20)  // Pixel buffer space between scrolling label
+    private static let kDefaultPixelsPerSecond = 30.0
+    private static let kDefaultPauseTime = 1.5
+
+    public var scrollDirection = EFAutoScrollDirection.Right {
         didSet {
             scrollLabelIfNeeded()
         }
     }
 
     // Pixels per second, defaults to 30
-    public var scrollSpeed = 30.0 {
+    public var scrollSpeed = EFAutoScrollLabel.kDefaultPixelsPerSecond {
         didSet {
             scrollLabelIfNeeded()
         }
     }
 
     // Defaults to 1.5
-    public var pauseInterval = 1.5
+    public var pauseInterval = EFAutoScrollLabel.kDefaultPauseTime
 
     // Pixels, defaults to 20
-    public var labelSpacing = CGFloat(20)
+    public var labelSpacing = EFAutoScrollLabel.kDefaultLabelBufferSpace
 
-    public var animationOptions: UIViewAnimationOptions!
+    public var animationOptions: UIViewAnimationOptions = UIViewAnimationOptions.curveLinear
 
     // Returns YES, if it is actively scrolling, NO if it has paused or if text is within bounds (disables scrolling).
     public var scrolling = false
 
     // Defaults to 7
-    public var fadeLength = CGFloat(7) {
+    public var fadeLength = EFAutoScrollLabel.kDefaultFadeLength {
         didSet {
             if oldValue != fadeLength {
                 refreshLabels()
@@ -154,29 +172,26 @@ public class EFAutoScrollLabel: UIView {
     }
 
     // Only applies when not auto-scrolling
-    public var textAlignment: NSTextAlignment!
+    public var textAlignment: NSTextAlignment = .left
 
     // Views
-    private var labels = [UILabel]()
-    private var mainLabel: UILabel! {
-        if labels.count > 0 {
-            return labels[0]
+    private var labels: [UILabel] = {
+        var ls = [UILabel]()
+        for index in 0 ..< EFAutoScrollLabel.kLabelCount {
+            ls.append(UILabel())
         }
-        return nil
+        return ls
+    }()
+    private var mainLabel: UILabel {
+        return labels.first!
     }
 
-    private var sv: UIScrollView!
-    public var scrollView: UIScrollView! {
-        get {
-            if sv == nil {
-                sv = UIScrollView(frame: self.bounds)
-                sv.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-                sv.backgroundColor = UIColor.clear
-            }
-
-            return sv
-        }
-    }
+    lazy public private(set) var scrollView: UIScrollView = {
+        let sv = UIScrollView(frame: self.bounds)
+        sv.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        sv.backgroundColor = UIColor.clear
+        return sv
+    }()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -189,34 +204,29 @@ public class EFAutoScrollLabel: UIView {
     }
 
     private func commonInit() {
+        assert(EFAutoScrollLabel.kLabelCount > 0, "EFAutoScrollLabel.kLabelCount must be greater than zero!")
 
         addSubview(scrollView)
 
         // Create the labels
-        for _ in 0 ..< kLabelCount {
-            let label = UILabel()
-            label.backgroundColor = UIColor.clear
-            label.autoresizingMask = autoresizingMask
-
-            // Store labels
-            self.scrollView.addSubview(label)
-            labels.append(label)
+        for index in 0 ..< EFAutoScrollLabel.kLabelCount {
+            labels[index].backgroundColor = UIColor.clear
+            labels[index].autoresizingMask = autoresizingMask
+            self.scrollView.addSubview(labels[index])
         }
 
         // Default values
-        scrollDirection = AutoScrollDirection.Left
-        scrollSpeed = kDefaultPixelsPerSecond
-        self.pauseInterval = kDefaultPauseTime
-        self.labelSpacing = kDefaultLabelBufferSpace
-        self.textAlignment = NSTextAlignment.left
-        self.animationOptions = UIViewAnimationOptions.curveLinear
+        self.scrollDirection = EFAutoScrollDirection.Left
+        self.scrollSpeed = EFAutoScrollLabel.kDefaultPixelsPerSecond
+        self.pauseInterval = EFAutoScrollLabel.kDefaultPauseTime
+        self.labelSpacing = EFAutoScrollLabel.kDefaultLabelBufferSpace
+        self.fadeLength = EFAutoScrollLabel.kDefaultFadeLength
         self.scrollView.showsVerticalScrollIndicator = false
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.isScrollEnabled = false
         self.isUserInteractionEnabled = false
         self.backgroundColor = UIColor.clear
         self.clipsToBounds = true
-        self.fadeLength = kDefaultFadeLength
     }
 
     public override var frame: CGRect {
@@ -283,7 +293,7 @@ public class EFAutoScrollLabel: UIView {
 
                 strongSelf.scrollView.layer.removeAllAnimations()
 
-                let doScrollLeft = strongSelf.scrollDirection == AutoScrollDirection.Left
+                let doScrollLeft = strongSelf.scrollDirection == EFAutoScrollDirection.Left
                 strongSelf.scrollView.contentOffset = doScrollLeft ? .zero : CGPoint(
                     x: labelWidth + strongSelf.labelSpacing, y: 0
                 )
@@ -330,10 +340,6 @@ public class EFAutoScrollLabel: UIView {
 
     @objc private func refreshLabels() {
         var offset = CGFloat(0)
-
-        if mainLabel == nil {
-            return
-        }
 
         for lab in labels {
             lab.sizeToFit()
@@ -384,10 +390,6 @@ public class EFAutoScrollLabel: UIView {
 
     private func applyGradientMaskForFadeLength(fadeLengthIn: CGFloat, enableFade fade: Bool) {
         var fadeLength = fadeLengthIn
-
-        if mainLabel == nil {
-            return
-        }
 
         let labelWidth = mainLabel.bounds.width
         if labelWidth <= self.bounds.width {
@@ -442,7 +444,7 @@ public class EFAutoScrollLabel: UIView {
             layer.mask = nil
         }
     }
-    
+
     private func onUIApplicationDidChangeStatusBarOrientationNotification(notification: NSNotification) {
         // Delay to have it re-calculate on next runloop
         perform(#selector(EFAutoScrollLabel.refreshLabels), with: nil, afterDelay: 0.1)

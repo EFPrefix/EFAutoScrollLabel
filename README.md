@@ -68,7 +68,7 @@ myLabel.pauseInterval = 1.7                     // Seconds of pause before scrol
 myLabel.scrollSpeed = 30                        // Pixels per second
 myLabel.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
 myLabel.fadeLength = 12                         // Length of the left and right edge fade, 0 to disable
-myLabel.scrollDirection = AutoScrollDirection.Left
+myLabel.scrollDirection = EFAutoScrollDirection.Left
 myLabel.observeApplicationNotifications()
 self.view.addSubview(myLabel)
 ```
