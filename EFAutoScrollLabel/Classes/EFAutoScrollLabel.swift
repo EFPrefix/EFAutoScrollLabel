@@ -58,7 +58,7 @@ public class EFAutoScrollLabel: UIView {
     // UILabel properties
     public var text: String? {
         get {
-            return mainLabel.text
+            return mainLabel.value(forKey: "text") as? String
         }
         set {
             setText(text: newValue, refresh: true)
@@ -266,47 +266,64 @@ public class EFAutoScrollLabel: UIView {
             return
         }
 
-        let labelWidth = mainLabel.bounds.width
-        if labelWidth <= self.bounds.width {
-            return
-        }
+        DispatchQueue.main.async {
+            [weak self] in
+            if let strongSelf = self {
+                let labelWidth = strongSelf.mainLabel.bounds.width
+                if labelWidth <= strongSelf.bounds.width {
+                    return
+                }
 
-        NSObject.cancelPreviousPerformRequests(
-            withTarget: self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil
-        )
-        NSObject.cancelPreviousPerformRequests(
-            withTarget: self, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil
-        )
+                NSObject.cancelPreviousPerformRequests(
+                    withTarget: strongSelf, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil
+                )
+                NSObject.cancelPreviousPerformRequests(
+                    withTarget: strongSelf, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil
+                )
 
-        scrollView.layer.removeAllAnimations()
+                strongSelf.scrollView.layer.removeAllAnimations()
 
-        let doScrollLeft = scrollDirection == AutoScrollDirection.Left
-        self.scrollView.contentOffset = doScrollLeft ? CGPoint.zero : CGPoint(x: labelWidth + labelSpacing, y: 0)
+                let doScrollLeft = strongSelf.scrollDirection == AutoScrollDirection.Left
+                strongSelf.scrollView.contentOffset = doScrollLeft ? .zero : CGPoint(
+                    x: labelWidth + strongSelf.labelSpacing, y: 0
+                )
 
-        perform(#selector(EFAutoScrollLabel.enableShadow), with: nil, afterDelay: self.pauseInterval)
+                strongSelf.perform(
+                    #selector(EFAutoScrollLabel.enableShadow), with: nil, afterDelay: strongSelf.pauseInterval
+                )
 
-        // Animate the scrolling
-        let duration = Double(labelWidth) / scrollSpeed
+                // Animate the scrolling
+                let duration = Double(labelWidth) / strongSelf.scrollSpeed
 
-        UIView.animate(
-            withDuration: duration,
-            delay: pauseInterval,
-            options: [self.animationOptions, UIViewAnimationOptions.allowUserInteraction],
-            animations: { () -> Void in
-                // Adjust offset
-                self.scrollView.contentOffset = doScrollLeft
-                    ? CGPoint(x: labelWidth + self.labelSpacing, y: 0)
-                    : CGPoint.zero
-        }) {
-            finished in
-            self.scrolling = false
+                UIView.animate(
+                    withDuration: duration,
+                    delay: strongSelf.pauseInterval,
+                    options: [strongSelf.animationOptions, UIViewAnimationOptions.allowUserInteraction],
+                    animations: { [weak self] () -> Void in
+                        if let strongSelf = self {
+                            // Adjust offset
+                            strongSelf.scrollView.contentOffset = doScrollLeft
+                                ? CGPoint(x: labelWidth + strongSelf.labelSpacing, y: 0)
+                                : CGPoint.zero
+                        }
+                }) {
+                    [weak self] finished in
+                    if let strongSelf = self {
+                        strongSelf.scrolling = false
 
-            // Remove the left shadow
-            self.applyGradientMaskForFadeLength(fadeLengthIn: self.fadeLength, enableFade: false)
+                        // Remove the left shadow
+                        strongSelf.applyGradientMaskForFadeLength(
+                            fadeLengthIn: strongSelf.fadeLength, enableFade: false
+                        )
 
-            // Setup pause delay/loop
-            if finished {
-                self.performSelector(inBackground: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil)
+                        // Setup pause delay/loop
+                        if finished {
+                            strongSelf.performSelector(
+                                inBackground: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil
+                            )
+                        }
+                    }
+                }
             }
         }
     }
