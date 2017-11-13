@@ -2,6 +2,14 @@
 
 -----
 
+## [4.0.1](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/4.0.1) (2017-11-08)
+
+#### Fix
+
+* Fix issue [#1](https://github.com/EyreFree/EFAutoScrollLabel/issues/1).
+
+---
+
 ## [4.0.0](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/4.0.0) (2017-09-30)
 
 #### Fix
