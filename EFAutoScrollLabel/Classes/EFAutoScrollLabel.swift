@@ -183,7 +183,7 @@ public class EFAutoScrollLabel: UIView {
         return ls
     }()
     private var mainLabel: UILabel {
-        return labels.first!
+        return labels.first ?? UILabel()
     }
 
     lazy public private(set) var scrollView: UIScrollView = {
@@ -279,60 +279,63 @@ public class EFAutoScrollLabel: UIView {
         DispatchQueue.main.async {
             [weak self] in
             if let strongSelf = self {
-                let labelWidth = strongSelf.mainLabel.bounds.width
-                if labelWidth <= strongSelf.bounds.width {
-                    return
+                strongSelf.scrollLabelIfNeededAction()
+            }
+        }
+    }
+
+    func scrollLabelIfNeededAction() {
+        let labelWidth = self.mainLabel.bounds.width
+        if labelWidth <= self.bounds.width {
+            return
+        }
+
+        NSObject.cancelPreviousPerformRequests(
+            withTarget: self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil
+        )
+        NSObject.cancelPreviousPerformRequests(
+            withTarget: self, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil
+        )
+
+        self.scrollView.layer.removeAllAnimations()
+
+        let doScrollLeft = self.scrollDirection == EFAutoScrollDirection.Left
+        self.scrollView.contentOffset = doScrollLeft ? .zero : CGPoint(
+            x: labelWidth + self.labelSpacing, y: 0
+        )
+
+        self.perform(
+            #selector(EFAutoScrollLabel.enableShadow), with: nil, afterDelay: self.pauseInterval
+        )
+
+        // Animate the scrolling
+        let duration = Double(labelWidth) / self.scrollSpeed
+
+        UIView.animate(
+            withDuration: duration,
+            delay: self.pauseInterval,
+            options: [self.animationOptions, UIViewAnimationOptions.allowUserInteraction],
+            animations: { [weak self] () -> Void in
+                if let strongSelf = self {
+                    // Adjust offset
+                    strongSelf.scrollView.contentOffset = doScrollLeft
+                        ? CGPoint(x: labelWidth + strongSelf.labelSpacing, y: 0)
+                        : CGPoint.zero
                 }
+        }) { [weak self] finished in
+            if let strongSelf = self {
+                strongSelf.scrolling = false
 
-                NSObject.cancelPreviousPerformRequests(
-                    withTarget: strongSelf, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil
-                )
-                NSObject.cancelPreviousPerformRequests(
-                    withTarget: strongSelf, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil
-                )
-
-                strongSelf.scrollView.layer.removeAllAnimations()
-
-                let doScrollLeft = strongSelf.scrollDirection == EFAutoScrollDirection.Left
-                strongSelf.scrollView.contentOffset = doScrollLeft ? .zero : CGPoint(
-                    x: labelWidth + strongSelf.labelSpacing, y: 0
+                // Remove the left shadow
+                strongSelf.applyGradientMaskForFadeLength(
+                    fadeLengthIn: strongSelf.fadeLength, enableFade: false
                 )
 
-                strongSelf.perform(
-                    #selector(EFAutoScrollLabel.enableShadow), with: nil, afterDelay: strongSelf.pauseInterval
-                )
-
-                // Animate the scrolling
-                let duration = Double(labelWidth) / strongSelf.scrollSpeed
-
-                UIView.animate(
-                    withDuration: duration,
-                    delay: strongSelf.pauseInterval,
-                    options: [strongSelf.animationOptions, UIViewAnimationOptions.allowUserInteraction],
-                    animations: { [weak self] () -> Void in
-                        if let strongSelf = self {
-                            // Adjust offset
-                            strongSelf.scrollView.contentOffset = doScrollLeft
-                                ? CGPoint(x: labelWidth + strongSelf.labelSpacing, y: 0)
-                                : CGPoint.zero
-                        }
-                }) {
-                    [weak self] finished in
-                    if let strongSelf = self {
-                        strongSelf.scrolling = false
-
-                        // Remove the left shadow
-                        strongSelf.applyGradientMaskForFadeLength(
-                            fadeLengthIn: strongSelf.fadeLength, enableFade: false
-                        )
-
-                        // Setup pause delay/loop
-                        if finished {
-                            strongSelf.performSelector(
-                                inBackground: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil
-                            )
-                        }
-                    }
+                // Setup pause delay/loop
+                if finished {
+                    strongSelf.performSelector(
+                        inBackground: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil
+                    )
                 }
             }
         }
@@ -397,52 +400,56 @@ public class EFAutoScrollLabel: UIView {
         }
 
         if fadeLength != 0 {
-            // Recreate gradient mask with new fade length
-            let gradientMask = CAGradientLayer()
-
-            gradientMask.bounds = self.layer.bounds
-            gradientMask.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
-
-            gradientMask.shouldRasterize = true
-            gradientMask.rasterizationScale = UIScreen.main.scale
-
-            gradientMask.startPoint = CGPoint(x: 0, y: self.frame.midY)
-            gradientMask.endPoint = CGPoint(x: 1, y: self.frame.midY)
-
-            // Setup fade mask colors and location
-            let transparent = UIColor.clear.cgColor
-
-            let opaque = UIColor.black.cgColor
-            gradientMask.colors = [transparent, opaque, opaque, transparent]
-
-            // Calcluate fade
-            let fadePoint = fadeLength / self.bounds.width
-            var leftFadePoint = fadePoint
-            var rightFadePoint = 1 - fadePoint
-            if !fade {
-                switch (self.scrollDirection) {
-                case .Left:
-                    leftFadePoint = 0
-
-                case .Right:
-                    leftFadePoint = 0
-                    rightFadePoint = 1
-                }
-            }
-
-            // Apply calculations to mask
-            gradientMask.locations = [
-                0, NSNumber(value: Double(leftFadePoint)), NSNumber(value: Double(rightFadePoint)), 1
-            ]
-
-            // Don't animate the mask change
-            CATransaction.begin()
-            CATransaction.setDisableActions(true)
-            self.layer.mask = gradientMask
-            CATransaction.commit()
+            gradientMaskFade(fade: fade)
         } else {
             layer.mask = nil
         }
+    }
+
+    func gradientMaskFade(fade: Bool) {
+        // Recreate gradient mask with new fade length
+        let gradientMask = CAGradientLayer()
+
+        gradientMask.bounds = self.layer.bounds
+        gradientMask.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+
+        gradientMask.shouldRasterize = true
+        gradientMask.rasterizationScale = UIScreen.main.scale
+
+        gradientMask.startPoint = CGPoint(x: 0, y: self.frame.midY)
+        gradientMask.endPoint = CGPoint(x: 1, y: self.frame.midY)
+
+        // Setup fade mask colors and location
+        let transparent = UIColor.clear.cgColor
+
+        let opaque = UIColor.black.cgColor
+        gradientMask.colors = [transparent, opaque, opaque, transparent]
+
+        // Calcluate fade
+        let fadePoint = fadeLength / self.bounds.width
+        var leftFadePoint = fadePoint
+        var rightFadePoint = 1 - fadePoint
+        if !fade {
+            switch (self.scrollDirection) {
+            case .Left:
+                leftFadePoint = 0
+
+            case .Right:
+                leftFadePoint = 0
+                rightFadePoint = 1
+            }
+        }
+
+        // Apply calculations to mask
+        gradientMask.locations = [
+            0, NSNumber(value: Double(leftFadePoint)), NSNumber(value: Double(rightFadePoint)), 1
+        ]
+
+        // Don't animate the mask change
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        self.layer.mask = gradientMask
+        CATransaction.commit()
     }
 
     private func onUIApplicationDidChangeStatusBarOrientationNotification(notification: NSNotification) {
