@@ -1,5 +1,5 @@
-
-osx_image: xcode9
+osx_image: xcode10
+env: SWIFT_SNAPSHOT=4.2
 language: objective-c
 
 cache: cocoapods
@@ -16,6 +16,7 @@ env:
 before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - pod repo update
   - pod install --project-directory=Example
 
 script:

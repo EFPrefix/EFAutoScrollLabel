@@ -58,7 +58,7 @@ public class EFAutoScrollLabel: UIView {
     // Pixels, defaults to 20
     public var labelSpacing = EFAutoScrollLabel.kDefaultLabelBufferSpace
 
-    public var animationOptions: UIViewAnimationOptions = UIViewAnimationOptions.curveLinear
+    public var animationOptions: UIView.AnimationOptions = UIView.AnimationOptions.curveLinear
 
     // Returns YES, if it is actively scrolling, NO if it has paused or if text is within bounds (disables scrolling).
     public var scrolling = false
@@ -188,7 +188,7 @@ public class EFAutoScrollLabel: UIView {
 
     lazy public private(set) var scrollView: UIScrollView = {
         let sv = UIScrollView(frame: self.bounds)
-        sv.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        sv.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         sv.backgroundColor = UIColor.clear
         return sv
     }()
@@ -258,11 +258,11 @@ public class EFAutoScrollLabel: UIView {
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
             self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
-            name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil
+            name: UIApplication.willEnterForegroundNotification, object: nil
         )
         NotificationCenter.default.addObserver(
             self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
-            name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil
+            name: UIApplication.didBecomeActiveNotification, object: nil
         )
     }
 
@@ -272,7 +272,7 @@ public class EFAutoScrollLabel: UIView {
     }
 
     @objc public func scrollLabelIfNeeded() {
-        if text == nil || text?.characters.count == 0 {
+        if text == nil || text?.count == 0 {
             return
         }
 
@@ -314,7 +314,7 @@ public class EFAutoScrollLabel: UIView {
         UIView.animate(
             withDuration: duration,
             delay: self.pauseInterval,
-            options: [self.animationOptions, UIViewAnimationOptions.allowUserInteraction],
+            options: [self.animationOptions, UIView.AnimationOptions.allowUserInteraction],
             animations: { [weak self] () -> Void in
                 if let strongSelf = self {
                     // Adjust offset
