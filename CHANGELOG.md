@@ -2,15 +2,23 @@
 
 -----
 
-## [4.0.1](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/4.0.1) (2017-11-08)
+## [4.1.0](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/4.1.0) (2018-11-06)
 
-#### Fix
+#### Add
 
-* Fix issue [#1](https://github.com/EyreFree/EFAutoScrollLabel/issues/1).
+* Upgrade to Swift 4.2.
 
 ---
 
-## [4.0.0](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/4.0.0) (2017-09-30)
+## [4.0.1](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/4.0.1) (2017-11-08)
+
+#### Fix
+
+* Fix issue [#1](https://github.com/EFPrefix/EFAutoScrollLabel/issues/1).
+
+---
+
+## [4.0.0](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/4.0.0) (2017-09-30)
 
 #### Fix
 
@@ -18,18 +26,18 @@
 
 ---
 
-## [1.0.2](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/1.0.2) (2017-05-25)
+## [1.0.2](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/1.0.2) (2017-05-25)
 
 Update.
 
 ---
 
-## [1.0.1](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/1.0.1) (2017-03-14)
+## [1.0.1](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/1.0.1) (2017-03-14)
 
 Update.
 
 ---
 
-## [1.0.0](https://github.com/EyreFree/EFAutoScrollLabel/releases/tag/1.0.0) (2017-03-07)
+## [1.0.0](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/1.0.0) (2017-03-07)
 
 First public release.

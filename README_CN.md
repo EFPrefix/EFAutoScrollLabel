@@ -1,23 +1,37 @@
-![](https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/assets/EFAutoScrollLabel.png)
+![](https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/Assets/EFAutoScrollLabel.png)
 
 <p align="center">
-<a href="https://travis-ci.org/EyreFree/EFAutoScrollLabel"><img src="http://img.shields.io/travis/EyreFree/EFAutoScrollLabel.svg"></a>
-<a href="http://cocoapods.org/pods/EFAutoScrollLabel"><img src="https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat"></a>
-<a href="http://cocoapods.org/pods/EFAutoScrollLabel"><img src="https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat"></a>
-<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-swift-orange.svg"></a>
-<a href="https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat"></a>
-<a href="https://twitter.com/EyreFree777"><img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat"></a>
-<a href="http://weibo.com/eyrefree777"><img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat"></a>
-<img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
+    <a href="https://travis-ci.org/EFPrefix/EFAutoScrollLabel">
+    	<img src="http://img.shields.io/travis/EFPrefix/EFAutoScrollLabel.svg">
+    </a>
+    <a href="http://cocoapods.org/pods/EFAutoScrollLabel">
+    	<img src="https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat">
+    </a>
+    <a href="http://cocoapods.org/pods/EFAutoScrollLabel">
+    	<img src="https://img.shields.io/cocoapods/p/EFAutoScrollLabel.svg?style=flat">
+    </a>
+    <a href="https://github.com/apple/swift">
+    	<img src="https://img.shields.io/badge/language-swift-orange.svg">
+    </a>
+    <a href="https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/LICENSE">
+    	<img src="https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat">
+    </a>
+    <a href="https://twitter.com/EyreFree777">
+    	<img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat">
+    </a>
+    <a href="http://weibo.com/eyrefree777">
+    	<img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat">
+    </a>
+    <img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
 </p>
 
 UILabel 跑马灯效果, Swift 版。
 
-> [English Introduction](https://github.com/EyreFree/EFAutoScrollLabel/blob/master/README.md)
+> [English Introduction](https://github.com/EFPrefix/EFAutoScrollLabel/blob/master/README.md)
 
 ## 概述
 
-<img src="https://raw.githubusercontent.com/EyreFree/EFAutoScrollLabel/master/assets/example.gif" width = "62.5%"/>
+<img src="https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/Assets/example.gif" width = "62.5%"/>
 
 ## 示例
 
@@ -28,7 +42,7 @@ UILabel 跑马灯效果, Swift 版。
 或执行以下命令：
 
 ```bash
-git clone git@github.com:EyreFree/EFAutoScrollLabel.git; cd EFAutoScrollLabel/Example; pod install; open EFAutoScrollLabel.xcworkspace
+git clone git@github.com:EFPrefix/EFAutoScrollLabel.git; cd EFAutoScrollLabel/Example; pod install; open EFAutoScrollLabel.xcworkspace
 ```
 
 ## 环境
@@ -84,7 +98,7 @@ self.view.addSubview(myLabel)
 
 ## 备注
 
-[EFAutoScrollLabel](https://github.com/EyreFree/EFAutoScrollLabel) 是基于 [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41) 进行开发的。
+[EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) 是基于 [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41) 进行开发的。
 
 ## 作者
 
