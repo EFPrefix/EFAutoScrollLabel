@@ -1,23 +1,27 @@
 PODS:
-  - EFAutoScrollLabel (4.1.0)
+  - EFAutoScrollLabel (5.0.0)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - EFAutoScrollLabel (from `../`)
-  - SnapKit (~> 4.2.0)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - SnapKit
+  - SnapKit (from `https://github.com/alanzeino/SnapKit.git`, branch `xcode102`)
 
 EXTERNAL SOURCES:
   EFAutoScrollLabel:
     :path: "../"
+  SnapKit:
+    :branch: xcode102
+    :git: https://github.com/alanzeino/SnapKit.git
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :commit: 122809d12f0a3ed8323d2e6b3ddc7ec107a6afc9
+    :git: https://github.com/alanzeino/SnapKit.git
 
 SPEC CHECKSUMS:
-  EFAutoScrollLabel: 36926c7b3fe121fb8e8683ba63135943322db9e7
+  EFAutoScrollLabel: 1b6a68a3ae3fd7c6a16c01ea258f14229f9693ed
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 2a11843975f7c9a87af430ee3c7918a67d1eb7db
+PODFILE CHECKSUM: f2532ed2d730511cd44eccf86d1802eca4f28344
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.1

@@ -3,9 +3,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'EFAutoScrollLabel_Example' do
-
-    pod 'SnapKit', '~> 4.2.0'                   # AutoLayout
-
+    pod 'SnapKit', :git => 'https://github.com/alanzeino/SnapKit.git', :branch => 'xcode102'
     pod 'EFAutoScrollLabel', :path => '../'
 
     target 'EFAutoScrollLabel_Tests' do

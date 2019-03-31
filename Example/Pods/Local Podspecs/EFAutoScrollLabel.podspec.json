@@ -1,9 +1,10 @@
 {
   "name": "EFAutoScrollLabel",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "summary": "A label which can scroll when text length beyond the width of label.",
   "description": "A label which can scroll when text length beyond the width of label, in Swift.",
-  "homepage": "https://github.com/EyreFree/EFAutoScrollLabel",
+  "homepage": "https://github.com/EFPrefix/EFAutoScrollLabel",
+  "screenshots": "https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/Assets/EFAutoScrollLabel.png",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,12 +13,13 @@
     "EyreFree": "eyrefree@eyrefree.org"
   },
   "source": {
-    "git": "https://github.com/EyreFree/EFAutoScrollLabel.git",
-    "tag": "4.1.0"
+    "git": "https://github.com/EFPrefix/EFAutoScrollLabel.git",
+    "tag": "5.0.0"
   },
   "social_media_url": "https://twitter.com/EyreFree777",
   "platforms": {
     "ios": "8.0"
   },
+  "requires_arc": true,
   "source_files": "EFAutoScrollLabel/Classes/*.swift"
 }
