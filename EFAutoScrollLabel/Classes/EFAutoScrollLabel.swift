@@ -27,19 +27,19 @@
 import UIKit
 
 public enum EFAutoScrollDirection {
-    case Right
-    case Left
+    case right
+    case left
 }
 
 public class EFAutoScrollLabel: UIView {
 
-    private static let kLabelCount = 2
-    private static let kDefaultFadeLength = CGFloat(7.0)
-    private static let kDefaultLabelBufferSpace = CGFloat(20)  // Pixel buffer space between scrolling label
-    private static let kDefaultPixelsPerSecond = 30.0
-    private static let kDefaultPauseTime = 1.5
+    private static let kLabelCount: Int = 2
+    private static let kDefaultFadeLength: CGFloat = 7.0
+    private static let kDefaultLabelBufferSpace: CGFloat = 20  // Pixel buffer space between scrolling label
+    private static let kDefaultPixelsPerSecond: Double = 30.0
+    private static let kDefaultPauseTime: Double = 1.5
 
-    public var scrollDirection = EFAutoScrollDirection.Right {
+    public var scrollDirection = EFAutoScrollDirection.right {
         didSet {
             scrollLabelIfNeeded()
         }
@@ -76,7 +76,7 @@ public class EFAutoScrollLabel: UIView {
     // UILabel properties
     public var text: String? {
         get {
-            return mainLabel.value(forKey: "text") as? String
+            return mainLabel.text
         }
         set {
             setText(text: newValue, refresh: true)
@@ -176,7 +176,7 @@ public class EFAutoScrollLabel: UIView {
 
     // Views
     private var labels: [UILabel] = {
-        var ls = [UILabel]()
+        var ls: [UILabel] = [UILabel]()
         for index in 0 ..< EFAutoScrollLabel.kLabelCount {
             ls.append(UILabel())
         }
@@ -216,7 +216,7 @@ public class EFAutoScrollLabel: UIView {
         }
 
         // Default values
-        self.scrollDirection = EFAutoScrollDirection.Left
+        self.scrollDirection = EFAutoScrollDirection.left
         self.scrollSpeed = EFAutoScrollLabel.kDefaultPixelsPerSecond
         self.pauseInterval = EFAutoScrollLabel.kDefaultPauseTime
         self.labelSpacing = EFAutoScrollLabel.kDefaultLabelBufferSpace
@@ -227,6 +227,12 @@ public class EFAutoScrollLabel: UIView {
         self.isUserInteractionEnabled = false
         self.backgroundColor = UIColor.clear
         self.clipsToBounds = true
+
+        // Active
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.observeApplicationNotifications()
+        }
     }
 
     public override var frame: CGRect {
@@ -257,12 +263,16 @@ public class EFAutoScrollLabel: UIView {
     public func observeApplicationNotifications() {
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
-            self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
-            name: UIApplication.willEnterForegroundNotification, object: nil
+            self,
+            selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
         )
         NotificationCenter.default.addObserver(
-            self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
-            name: UIApplication.didBecomeActiveNotification, object: nil
+            self,
+            selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
+            name: UIApplication.didBecomeActiveNotification,
+            object: nil
         )
     }
 
@@ -272,15 +282,13 @@ public class EFAutoScrollLabel: UIView {
     }
 
     @objc public func scrollLabelIfNeeded() {
-        if text == nil || text?.count == 0 {
+        if text == nil || text?.isEmpty == true {
             return
         }
 
-        DispatchQueue.main.async {
-            [weak self] in
-            if let strongSelf = self {
-                strongSelf.scrollLabelIfNeededAction()
-            }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.scrollLabelIfNeededAction()
         }
     }
 
@@ -290,23 +298,15 @@ public class EFAutoScrollLabel: UIView {
             return
         }
 
-        NSObject.cancelPreviousPerformRequests(
-            withTarget: self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil
-        )
-        NSObject.cancelPreviousPerformRequests(
-            withTarget: self, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil
-        )
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil)
 
         self.scrollView.layer.removeAllAnimations()
 
-        let doScrollLeft = self.scrollDirection == EFAutoScrollDirection.Left
-        self.scrollView.contentOffset = doScrollLeft ? .zero : CGPoint(
-            x: labelWidth + self.labelSpacing, y: 0
-        )
+        let doScrollLeft = self.scrollDirection == EFAutoScrollDirection.left
+        self.scrollView.contentOffset = doScrollLeft ? .zero : CGPoint(x: labelWidth + self.labelSpacing, y: 0)
 
-        self.perform(
-            #selector(EFAutoScrollLabel.enableShadow), with: nil, afterDelay: self.pauseInterval
-        )
+        self.perform(#selector(EFAutoScrollLabel.enableShadow), with: nil, afterDelay: self.pauseInterval)
 
         // Animate the scrolling
         let duration = Double(labelWidth) / self.scrollSpeed
@@ -316,27 +316,20 @@ public class EFAutoScrollLabel: UIView {
             delay: self.pauseInterval,
             options: [self.animationOptions, UIView.AnimationOptions.allowUserInteraction],
             animations: { [weak self] () -> Void in
-                if let strongSelf = self {
-                    // Adjust offset
-                    strongSelf.scrollView.contentOffset = doScrollLeft
-                        ? CGPoint(x: labelWidth + strongSelf.labelSpacing, y: 0)
-                        : CGPoint.zero
-                }
+                guard let self = self else { return }
+                // Adjust offset
+                let offsetTodo: CGPoint = CGPoint(x: labelWidth + self.labelSpacing, y: 0)
+                self.scrollView.contentOffset = doScrollLeft ? offsetTodo : CGPoint.zero
         }) { [weak self] finished in
-            if let strongSelf = self {
-                strongSelf.scrolling = false
+            guard let self = self else { return }
+            self.scrolling = false
 
-                // Remove the left shadow
-                strongSelf.applyGradientMaskForFadeLength(
-                    fadeLengthIn: strongSelf.fadeLength, enableFade: false
-                )
+            // Remove the left shadow
+            self.applyGradientMaskForFadeLength(fadeLengthIn: self.fadeLength, enableFade: false)
 
-                // Setup pause delay/loop
-                if finished {
-                    strongSelf.performSelector(
-                        inBackground: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil
-                    )
-                }
+            // Setup pause delay/loop
+            if finished {
+                self.performSelector(inBackground: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), with: nil)
             }
         }
     }
@@ -431,10 +424,9 @@ public class EFAutoScrollLabel: UIView {
         var rightFadePoint = 1 - fadePoint
         if !fade {
             switch (self.scrollDirection) {
-            case .Left:
+            case .left:
                 leftFadePoint = 0
-
-            case .Right:
+            case .right:
                 leftFadePoint = 0
                 rightFadePoint = 1
             }
@@ -442,7 +434,10 @@ public class EFAutoScrollLabel: UIView {
 
         // Apply calculations to mask
         gradientMask.locations = [
-            0, NSNumber(value: Double(leftFadePoint)), NSNumber(value: Double(rightFadePoint)), 1
+            0,
+            NSNumber(value: Double(leftFadePoint)),
+            NSNumber(value: Double(rightFadePoint)),
+            1
         ]
 
         // Don't animate the mask change

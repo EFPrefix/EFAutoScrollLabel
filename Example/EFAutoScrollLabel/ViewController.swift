@@ -63,8 +63,7 @@ class ViewController: UIViewController {
         scrollView0.scrollSpeed = 30                        // Pixels per second
         scrollView0.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
         scrollView0.fadeLength = 12                         // Length of the left and right edge fade, 0 to disable
-        scrollView0.scrollDirection = EFAutoScrollDirection.Left
-        scrollView0.observeApplicationNotifications()
+        scrollView0.scrollDirection = EFAutoScrollDirection.left
         scrollView0.isUserInteractionEnabled = false
         self.view.addSubview(scrollView0)
         scrollView0.snp.makeConstraints { (make) in
@@ -84,8 +83,7 @@ class ViewController: UIViewController {
         scrollView1.scrollSpeed = 30
         scrollView1.textAlignment = NSTextAlignment.left
         scrollView1.fadeLength = 12
-        scrollView1.scrollDirection = EFAutoScrollDirection.Left
-        scrollView1.observeApplicationNotifications()
+        scrollView1.scrollDirection = EFAutoScrollDirection.left
         scrollView1.isUserInteractionEnabled = false
         self.view.addSubview(scrollView1)
         scrollView1.snp.makeConstraints { (make) in
@@ -105,8 +103,7 @@ class ViewController: UIViewController {
         scrollView2.scrollSpeed = 60
         scrollView2.textAlignment = NSTextAlignment.left
         scrollView2.fadeLength = 0
-        scrollView2.scrollDirection = EFAutoScrollDirection.Right
-        scrollView2.observeApplicationNotifications()
+        scrollView2.scrollDirection = EFAutoScrollDirection.right
         scrollView2.isUserInteractionEnabled = false
         self.view.addSubview(scrollView2)
         scrollView2.snp.makeConstraints { (make) in
@@ -127,8 +124,7 @@ class ViewController: UIViewController {
         scrollView3.scrollSpeed = 30
         scrollView3.textAlignment = NSTextAlignment.left
         scrollView3.fadeLength = 12
-        scrollView3.scrollDirection = EFAutoScrollDirection.Left
-        scrollView3.observeApplicationNotifications()
+        scrollView3.scrollDirection = EFAutoScrollDirection.left
         scrollView3.isUserInteractionEnabled = false
         self.view.addSubview(scrollView3)
         scrollView3.snp.makeConstraints { (make) in

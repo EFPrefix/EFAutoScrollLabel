@@ -83,8 +83,7 @@ myLabel.pauseInterval = 1.7                     // Seconds of pause before scrol
 myLabel.scrollSpeed = 30                        // Pixels per second
 myLabel.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
 myLabel.fadeLength = 12                         // Length of the left and right edge fade, 0 to disable
-myLabel.scrollDirection = EFAutoScrollDirection.Left
-myLabel.observeApplicationNotifications()
+myLabel.scrollDirection = EFAutoScrollDirection.left
 self.view.addSubview(myLabel)
 ```
 
@@ -93,6 +92,18 @@ self.view.addSubview(myLabel)
 ## PS
 
 The first version of [EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) is converted from [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41).
+
+## Apps using EFColorPicker
+
+<table>
+    <tr>
+        <td>
+            <a href='https://www.appsight.io/app/oneplace-com' title='OnePlace - Christian Audio Broadcasts &amp; S'>
+                <img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/000/131/320/media/small.png?1475577461'>
+            </a>
+        </td>
+    </tr>
+</table>
 
 ## Author
 

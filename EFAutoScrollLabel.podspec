@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFAutoScrollLabel'
-    s.version          = '5.0.0'
+    s.version          = '5.1.0'
     s.summary          = 'A label which can scroll when text length beyond the width of label.'
     
     s.description      = <<-DESC

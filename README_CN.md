@@ -94,7 +94,6 @@ myLabel.scrollSpeed = 30                        // Pixels per second
 myLabel.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
 myLabel.fadeLength = 12                         // Length of the left and right edge fade, 0 to disable
 myLabel.scrollDirection = AutoScrollDirection.Left
-myLabel.observeApplicationNotifications()
 self.view.addSubview(myLabel)
 ```
 
@@ -103,6 +102,18 @@ self.view.addSubview(myLabel)
 ## 备注
 
 [EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) 是基于 [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41) 进行开发的。
+
+## 使用 EFColorPicker 的应用
+
+<table>
+    <tr>
+        <td>
+            <a href='https://www.appsight.io/app/oneplace-com' title='OnePlace - Christian Audio Broadcasts &amp; S'>
+                <img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/000/131/320/media/small.png?1475577461'>
+            </a>
+        </td>
+    </tr>
+</table>
 
 ## 作者
 
