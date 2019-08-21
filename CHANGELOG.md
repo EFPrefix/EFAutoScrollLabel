@@ -2,6 +2,14 @@
 
 -----
 
+## [5.1.1](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/5.1.1) (2019-08-21)
+
+#### Fix
+
+* Fix issue [#6](https://github.com/EFPrefix/EFAutoScrollLabel/issues/6).
+
+---
+
 ## [5.0.0](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/5.0.0) (2019-03-31)
 
 #### Add

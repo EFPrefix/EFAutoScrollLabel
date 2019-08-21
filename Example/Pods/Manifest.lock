@@ -1,5 +1,5 @@
 PODS:
-  - EFAutoScrollLabel (5.1.0)
+  - EFAutoScrollLabel (5.1.1)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
@@ -19,7 +19,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/alanzeino/SnapKit.git
 
 SPEC CHECKSUMS:
-  EFAutoScrollLabel: 5a5069b65d6c0dbf6395f2daa732114e84729a74
+  EFAutoScrollLabel: ad70ff99b6af329315094940a9e15c1e37514109
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: f2532ed2d730511cd44eccf86d1802eca4f28344
