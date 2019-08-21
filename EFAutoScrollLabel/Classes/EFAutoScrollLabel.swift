@@ -282,12 +282,11 @@ public class EFAutoScrollLabel: UIView {
     }
 
     @objc public func scrollLabelIfNeeded() {
-        if text == nil || text?.isEmpty == true {
-            return
-        }
-
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            if self.text == nil || self.text?.isEmpty == true {
+                return
+            }
             self.scrollLabelIfNeededAction()
         }
     }
