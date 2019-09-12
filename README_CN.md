@@ -103,7 +103,7 @@ self.view.addSubview(myLabel)
 
 [EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) 是基于 [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41) 进行开发的。
 
-## 使用 EFColorPicker 的应用
+## 使用 EFAutoScrollLabel 的应用
 
 <table>
     <tr>

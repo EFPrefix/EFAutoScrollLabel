@@ -93,7 +93,7 @@ self.view.addSubview(myLabel)
 
 The first version of [EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) is converted from [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41).
 
-## Apps using EFColorPicker
+## Apps using EFAutoScrollLabel
 
 <table>
     <tr>
