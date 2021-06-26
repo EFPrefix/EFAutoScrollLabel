@@ -97,11 +97,8 @@ The first version of [EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrol
 
 <table>
     <tr>
-        <td>
-            <a href='https://www.appsight.io/app/oneplace-com' title='OnePlace - Christian Audio Broadcasts &amp; S'>
-                <img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/000/131/320/media/small.png?1475577461'>
-            </a>
-        </td>
+        <td><a href='https://www.appsight.io/app/ether-vpn' title='Ether VPN - Light and Secure'><img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/001/395/011/media/small.png?1612995337'></a></td>
+        <td><a href='https://www.appsight.io/app/oneplace-com' title='OnePlace - Christian Audio Broadcasts &amp; S'><img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/000/131/320/media/small.png?1475577461'></a></td>
     </tr>
 </table>
 
