@@ -4,6 +4,9 @@
     <a href="https://travis-ci.org/EFPrefix/EFAutoScrollLabel">
     	<img src="http://img.shields.io/travis/EFPrefix/EFAutoScrollLabel.svg">
     </a>
+    <a href="https://swiftpackageindex.com/EFPrefix/EFAutoScrollLabel">
+        <img src="https://img.shields.io/badge/SPM-ready-orange.svg">
+    </a>
     <a href="http://cocoapods.org/pods/EFAutoScrollLabel">
     	<img src="https://img.shields.io/cocoapods/v/EFAutoScrollLabel.svg?style=flat">
     </a>
@@ -47,11 +50,25 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+### CocoaPods
+
 EFAutoScrollLabel is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "EFAutoScrollLabel"
+```
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the Swift compiler.
+
+Once you have your Swift package set up, adding EFAutoScrollLabel as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.2"))
+]
 ```
 
 ## Setup

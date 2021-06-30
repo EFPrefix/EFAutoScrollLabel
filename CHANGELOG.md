@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.2](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/5.1.2) (2021-06-30)
+
+- Support SPM.
+
+---
+
 ## [5.1.1](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/5.1.1) (2019-08-21)
 
 #### Fix
