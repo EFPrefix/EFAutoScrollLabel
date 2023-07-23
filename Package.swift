@@ -29,7 +29,7 @@ import PackageDescription
 
 let package = Package(
     name: "EFAutoScrollLabel",
-    platforms: [.iOS(.v8)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(name: "EFAutoScrollLabel", targets: ["EFAutoScrollLabel"])
     ],

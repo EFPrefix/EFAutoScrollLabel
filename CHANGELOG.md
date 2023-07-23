@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.3](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/5.1.3) (2023-07-23)
+
+- Update minimum ios version.
+
+---
+
 ## [5.1.2](https://github.com/EFPrefix/EFAutoScrollLabel/releases/tag/5.1.2) (2021-06-30)
 
 - Support SPM.

@@ -1,9 +1,6 @@
 ![](https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/Assets/EFAutoScrollLabel.png)
 
 <p align="center">
-    <a href="https://travis-ci.org/EFPrefix/EFAutoScrollLabel">
-    	<img src="http://img.shields.io/travis/EFPrefix/EFAutoScrollLabel.svg">
-    </a>
     <a href="https://swiftpackageindex.com/EFPrefix/EFAutoScrollLabel">
         <img src="https://img.shields.io/badge/SPM-ready-orange.svg">
     </a>
@@ -19,13 +16,6 @@
     <a href="https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/LICENSE">
     	<img src="https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat">
     </a>
-    <a href="https://twitter.com/EyreFree777">
-    	<img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat">
-    </a>
-    <a href="http://weibo.com/eyrefree777">
-    	<img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat">
-    </a>
-    <img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
 </p>
 
 A label which can scroll when text length beyond the width of label, in Swift.
@@ -67,7 +57,7 @@ Once you have your Swift package set up, adding EFAutoScrollLabel as a dependenc
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.2"))
+    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.3"))
 ]
 ```
 

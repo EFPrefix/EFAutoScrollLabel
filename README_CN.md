@@ -1,9 +1,6 @@
 ![](https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/Assets/EFAutoScrollLabel.png)
 
 <p align="center">
-    <a href="https://travis-ci.org/EFPrefix/EFAutoScrollLabel">
-    	<img src="http://img.shields.io/travis/EFPrefix/EFAutoScrollLabel.svg">
-    </a>
     <a href="https://swiftpackageindex.com/EFPrefix/EFAutoScrollLabel">
         <img src="https://img.shields.io/badge/SPM-ready-orange.svg">
     </a>
@@ -18,16 +15,6 @@
     </a>
     <a href="https://raw.githubusercontent.com/EFPrefix/EFAutoScrollLabel/master/LICENSE">
     	<img src="https://img.shields.io/cocoapods/l/EFAutoScrollLabel.svg?style=flat">
-    </a>
-    <a href="https://twitter.com/EyreFree777">
-    	<img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat">
-    </a>
-    <a href="http://weibo.com/eyrefree777">
-    	<img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat">
-    </a>
-    <img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
-    <a href="http://shang.qq.com/wpa/qunwpa?idkey=d0f732585dcb0c6f2eb26bc9e0327f6305d18260eeba89ed26a201b520c572c0">
-        <img src="https://img.shields.io/badge/Q群-769966374-32befc.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAA4VBMVEUAAAAAAAAAAAD3rwgAAAAAAADpICBuTQNUDAwAAAAAAAAAAAAAAADnICAAAAAAAACbFRUAAAD5rgkfFgEAAADHGxu1GBhGOyQ6LhMPCgAAAAB0UQRbDAziHh7hHh5HRUEAAAAPAgIQCwEQEBAdBAQgICAvIQIvLy8+LAJAQEBJCgpWRBpbW1tfX19gYGBqZVptTARvb299VwSAgICEhISHh4ePhnGbbAWgoKCseAawsLC7gwbAwMDExMTFrKzLjgfoHx/powfqpAjvZGTw8PDxcnLxenrzj4/5rgj5x8f///9y6ONcAAAAIHRSTlMAECAgMEBQVlhggZGhobHBwdHR3eHh4+fp7/Hx9/f5+3tefS0AAACkSURBVHjaNc1FAsJAEAXRDj64BAv2IbgEd2s0gfsfiJkAtXurIpkWMQBd0K8O3KZfhWEeW9YB8LnUYY2Gi6WJqJIHwKo7GAMpRT/aV0d2BhRD/Xp7tt9OGs2yYoy5mpUxc0BOc/yvkiQSwJPZtu3XCdAoDtjMb5k8C9KN1utx+zFChsD97bYzRII0Ss2/7IUliILFjZKV8ZLM61xK+V6tsHbSRB+BYB6Vhuib7wAAAABJRU5ErkJggg==">
     </a>
 </p>
 
@@ -77,7 +64,7 @@ pod "EFAutoScrollLabel"
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.2"))
+    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.3"))
 ]
 ```
 
