@@ -18,7 +18,7 @@
     </a>
 </p>
 
-UILabel 跑马灯效果, Swift 版。
+UILabel 跑马灯效果, Swift 版。基于 [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41) 进行开发。
 
 > [English Introduction](https://github.com/EFPrefix/EFAutoScrollLabel/blob/master/README.md)
 
@@ -40,11 +40,8 @@ git clone git@github.com:EFPrefix/EFAutoScrollLabel.git; cd EFAutoScrollLabel/Ex
 
 ## 环境
 
-| 版本    | 需求                                                            |
-|:--------|:------------------------------------------------|
-| 1.x      | XCode 8.0+<br>Swift 3.0+<br>iOS 8.0+   |
-| 4.x      | XCode 9.0+<br>Swift 4.0+<br>iOS 8.0+   |
-| 5.x      | XCode 10.2+<br>Swift 5.0+<br>iOS 8.0+ |
+- Xcode 16+
+- Swift 6.0+
 
 ## 导入
 
@@ -64,7 +61,7 @@ pod "EFAutoScrollLabel"
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.3"))
+    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "6.0.0.0"))
 ]
 ```
 
@@ -102,19 +99,6 @@ self.view.addSubview(myLabel)
 ```
 
 #### 3. 支持 `AutoLayout`。
-
-## 备注
-
-[EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) 是基于 [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41) 进行开发的。
-
-## 使用 EFAutoScrollLabel 的应用
-
-<table>
-    <tr>
-        <td><a href='https://www.appsight.io/app/ether-vpn' title='Ether VPN - Light and Secure'><img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/001/395/011/media/small.png?1612995337'></a></td>
-        <td><a href='https://www.appsight.io/app/oneplace-com' title='OnePlace - Christian Audio Broadcasts &amp; S'><img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/000/131/320/media/small.png?1475577461'></a></td>
-    </tr>
-</table>
 
 ## 作者
 

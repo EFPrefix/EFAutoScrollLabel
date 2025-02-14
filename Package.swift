@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:6.0
 //
 //  Package.swift
 //  EFAutoScrollLabel
@@ -29,12 +29,12 @@ import PackageDescription
 
 let package = Package(
     name: "EFAutoScrollLabel",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(name: "EFAutoScrollLabel", targets: ["EFAutoScrollLabel"])
     ],
     targets: [
         .target(name: "EFAutoScrollLabel", path: "EFAutoScrollLabel", exclude: ["Info.plist", "Info-tvOS.plist"])
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v6]
 )

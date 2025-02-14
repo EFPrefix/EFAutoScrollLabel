@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFAutoScrollLabel'
-    s.version          = '5.1.3'
+    s.version          = '6.0.0.0'
     s.summary          = 'A label which can scroll when text length beyond the width of label.'
     
     s.description      = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/EFPrefix/EFAutoScrollLabel.git', :tag => s.version.to_s }
     s.social_media_url = 'https://twitter.com/EyreFree777'
     
-    s.ios.deployment_target = '11.0'
+    s.ios.deployment_target = '12.0'
     s.requires_arc = true
     s.source_files = 'EFAutoScrollLabel/Classes/*.swift'
 end

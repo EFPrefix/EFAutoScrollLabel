@@ -18,7 +18,7 @@
     </a>
 </p>
 
-A label which can scroll when text length beyond the width of label, in Swift.
+A label which can scroll when text length beyond the width of label, in Swift. Converted from [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41)
 
 > [中文介绍](https://github.com/EFPrefix/EFAutoScrollLabel/blob/master/README_CN.md)
 
@@ -32,18 +32,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-| Version | Needs                                                         |
-|:---------|:-------------------------------------------------|
-| 1.x        | XCode 8.0+<br>Swift 3.0+<br>iOS 8.0+   |
-| 4.x        | XCode 9.0+<br>Swift 4.0+<br>iOS 8.0+   |
-| 5.x        | XCode 10.2+<br>Swift 5.0+<br>iOS 8.0+ |
+- Xcode 16+
+- Swift 6.0+
 
 ## Installation
 
 ### CocoaPods
 
-EFAutoScrollLabel is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+EFAutoScrollLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod "EFAutoScrollLabel"
@@ -57,7 +53,7 @@ Once you have your Swift package set up, adding EFAutoScrollLabel as a dependenc
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "5.1.3"))
+    .package(url: "https://github.com/EFPrefix/EFAutoScrollLabel.git", .upToNextMinor(from: "6.0.0.0"))
 ]
 ```
 
@@ -95,19 +91,6 @@ self.view.addSubview(myLabel)
 ```
 
 #### 3. `AutoLayout` is also supported.
-
-## PS
-
-The first version of [EFAutoScrollLabel](https://github.com/EFPrefix/EFAutoScrollLabel) is converted from [AutoScrollLabel](https://github.com/firewolf-ljw/AutoScrollLabel/commit/6981994ad64ab3b29b87a423109f556134c83b41).
-
-## Apps using EFAutoScrollLabel
-
-<table>
-    <tr>
-        <td><a href='https://www.appsight.io/app/ether-vpn' title='Ether VPN - Light and Secure'><img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/001/395/011/media/small.png?1612995337'></a></td>
-        <td><a href='https://www.appsight.io/app/oneplace-com' title='OnePlace - Christian Audio Broadcasts &amp; S'><img src='https://d3ixtyf8ei2pcx.cloudfront.net/icons/000/131/320/media/small.png?1475577461'></a></td>
-    </tr>
-</table>
 
 ## Author
 
