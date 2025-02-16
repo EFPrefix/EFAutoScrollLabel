@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/EFPrefix/EFAutoScrollLabel.git', :tag => s.version.to_s }
     s.social_media_url = 'https://twitter.com/EyreFree777'
     
+    s.swift_version = '6.0'
     s.ios.deployment_target = '12.0'
     s.requires_arc = true
     s.source_files = 'EFAutoScrollLabel/Classes/*.swift'
